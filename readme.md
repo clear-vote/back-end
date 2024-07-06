@@ -17,6 +17,10 @@ Host flask-app-ec2
 3. `python app.py`
 > runs the app locally
 
+## adding a new dependency
+pip freeze > requirements.txt
+> Make sure you are in the virtual environment!!
+
 ## Restarting for production on AWS EC2 instance
 1. Restart and enable the flaskapp
 sudo systemctl restart flaskapp && sudo systemctl enable flaskapp
@@ -28,7 +32,7 @@ curl http://35.88.126.46
 4. (optional) If you ever change the public IP, make sure to update it in the flaskapp configuration at
 /etc/nginx/sites-available/flaskapp
 5. (optional) reload the configurations and restart nginx (not sure if this is necessary)
-sudo systemctl daemon-reload && sudo systemctl restart nginx
+
 
 # TODO
 We probably want to use lamdba for our usecase, not an EC2 instance
@@ -37,3 +41,5 @@ AWS Lambda: For serverless computing to execute your application logic without m
 Amazon RDS (Relational Database Service): To host your MySQL database.
 Amazon S3: To store static assets or backup data if needed.
 AWS IAM (Identity and Access Management): To manage access and permissions securely.
+
+/etc/systemd/system/flaskapp.service
