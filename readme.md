@@ -7,7 +7,7 @@ Insert the following ssh code
 > Host flask-app-ec2
 >     HostName ec2-35-88-126-46.us-west-2.compute.amazonaws.com
 >     User ubuntu
->    IdentityFile <your-key-name-here>
+>     IdentityFile <your-key-name-here>
 
 
 ## Getting started
